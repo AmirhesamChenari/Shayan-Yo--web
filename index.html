@@ -3,14 +3,23 @@
 
 <head>
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Official artist links">
+    <meta name="description" content="Shayan Yo — Official links, music, social media and more.">
+
+    <meta name="theme-color" content="#0b0b0d">
 
     <title>Shayan Yo — Official Links</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
+
     <link rel="stylesheet" href="css/components.css">
+
     <link rel="stylesheet" href="css/responsive.css">
 
     <!-- Font Awesome -->
@@ -19,7 +28,7 @@
 
 <body>
 
-    <!-- Lightning Background -->
+    <!-- Background -->
     <canvas id="lightning-background"></canvas>
 
     <main class="page">
@@ -31,134 +40,148 @@
 
             <h1>Shayan Yo</h1>
 
-            <p class="username">@artistusername</p>
+            <p class="username">
+                @artistusername
+            </p>
 
-            <p class="bio"></p>
+            <p class="bio">
+                Official artist links, music and social media.
+            </p>
 
         </header>
 
-
+        <!-- Main Sections -->
         <div class="sections">
 
             <!-- Music -->
-            <section class="section" aria-labelledby="music-title">
+            <section class="section">
 
-                <h2 id="music-title">Music</h2>
+                <h2>Music</h2>
 
                 <div class="links">
 
                     <!-- Spotify -->
-                    <a class="link-card"
-                        href="https://open.spotify.com/artist/1auD6S9qViY72nLUvLrL6a?si=ADf_JQxaRMyVU50L1mU2yw&nd=1&dlsi=62065d1360ba4432"
-                        target="_blank" rel="noopener noreferrer">
+                    <a class="link-card" href="#" target="_blank" rel="noopener noreferrer">
                         <span class="icon">
                             <i class="fa-brands fa-spotify"></i>
                         </span>
 
                         <span class="link-text">
                             <strong>Spotify</strong>
-                            <small>Listen to the music</small>
+                            <small>Listen on Spotify</small>
                         </span>
 
-                        <span class="arrow">→</span>
+                        <span class="arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
                     </a>
 
-
-                    <!-- YouTube -->
+                    <!-- YouTube Menu -->
                     <div class="youtube-menu">
 
-                        <div class="link-card youtube-main">
-
+                        <button class="link-card youtube-main" type="button" aria-expanded="false"
+                            aria-controls="youtube-submenu">
                             <span class="icon">
                                 <i class="fa-brands fa-youtube"></i>
                             </span>
 
                             <span class="link-text">
                                 <strong>YouTube</strong>
-                                <small>Music and videos</small>
+                                <small>Watch videos and music</small>
                             </span>
 
-                            <span class="arrow">→</span>
-
-                        </div>
-
+                            <span class="arrow youtube-arrow">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </button>
 
                         <!-- YouTube Submenu -->
-                        <div class="youtube-submenu">
+                        <div class="youtube-submenu" id="youtube-submenu" aria-hidden="true">
 
-                            <a class="youtube-submenu-item" href="https://www.youtube.com/@shayanyo_official"
-                                target="_blank" rel="noopener noreferrer">
+                            <!-- YouTube -->
+                            <a class="youtube-submenu-item" href="#" target="_blank" rel="noopener noreferrer"
+                                tabindex="-1">
+                                <span class="icon">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </span>
+
                                 <span class="link-text">
                                     <strong>YouTube</strong>
-                                    <small>Music and videos</small>
+                                    <small>Official YouTube channel</small>
                                 </span>
 
-                                <span class="arrow">→</span>
+                                <span class="arrow">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
                             </a>
 
-
-                            <a class="youtube-submenu-item"
-                                href="https://music.youtube.com/channel/UCcWGYLA5pvSviTmJbKfPHQA" target="_blank"
-                                rel="noopener noreferrer">
-                                <span class="link-text">
-                                    <strong>YouTube Music</strong>
-                                    <small>Listen to music</small>
+                            <!-- YouTube Music -->
+                            <a class="youtube-submenu-item" href="#" target="_blank" rel="noopener noreferrer"
+                                tabindex="-1">
+                                <span class="icon">
+                                    <i class="fa-brands fa-youtube"></i>
                                 </span>
 
-                                <span class="arrow">→</span>
+                                <span class="link-text">
+                                    <strong>YouTube Music</strong>
+                                    <small>Listen on YouTube Music</small>
+                                </span>
+
+                                <span class="arrow">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
                             </a>
 
                         </div>
 
                     </div>
 
-
                     <!-- Apple Music -->
-                    <a class="link-card" href="https://music.apple.com/it/artist/shayan-yo/1612475671?l=en-GB"
-                        target="_blank" rel="noopener noreferrer">
+                    <a class="link-card" href="#" target="_blank" rel="noopener noreferrer">
                         <span class="icon">
-                            <i class="fa-solid fa-music"></i>
+                            <i class="fa-brands fa-apple"></i>
                         </span>
 
                         <span class="link-text">
                             <strong>Apple Music</strong>
-                            <small>Listen to the latest song</small>
+                            <small>Listen on Apple Music</small>
                         </span>
 
-                        <span class="arrow">→</span>
+                        <span class="arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
                     </a>
 
-
                     <!-- SoundCloud -->
-                    <a class="link-card" href="https://soundcloud.com/shayanyoo" target="_blank"
-                        rel="noopener noreferrer">
+                    <a class="link-card" href="#" target="_blank" rel="noopener noreferrer">
                         <span class="icon">
                             <i class="fa-brands fa-soundcloud"></i>
                         </span>
 
                         <span class="link-text">
                             <strong>SoundCloud</strong>
-                            <small>Listen to the music</small>
+                            <small>Listen on SoundCloud</small>
                         </span>
 
-                        <span class="arrow">→</span>
+                        <span class="arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
                     </a>
 
-
                     <!-- Amazon Music -->
-                    <a class="link-card"
-                        href="https://music.amazon.com/artists/B0B4GDYHVF?marketplaceId=A3K6Y4MI8GDYMT&musicTerritory=FI&ref=dm_sh_4LsXUjHjY2VQHN51Ykv19cxX2"
-                        target="_blank" rel="noopener noreferrer">
+                    <a class="link-card" href="#" target="_blank" rel="noopener noreferrer">
                         <span class="icon">
                             <i class="fa-brands fa-amazon"></i>
                         </span>
 
                         <span class="link-text">
                             <strong>Amazon Music</strong>
-                            <small>Listen to the music</small>
+                            <small>Listen on Amazon Music</small>
                         </span>
 
-                        <span class="arrow">→</span>
+                        <span class="arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
                     </a>
 
                 </div>
@@ -166,45 +189,43 @@
             </section>
 
             <!-- Social -->
-            <section class="section" aria-labelledby="social-title">
+            <section class="section">
 
-                <h2 id="social-title">Social</h2>
+                <h2>Social</h2>
 
                 <div class="links">
 
                     <!-- Instagram -->
-                    <a class="link-card" href="https://www.instagram.com/shayanyo_" target="_blank"
-                        rel="noopener noreferrer">
+                    <a class="link-card" href="#" target="_blank" rel="noopener noreferrer">
                         <span class="icon">
                             <i class="fa-brands fa-instagram"></i>
                         </span>
 
                         <span class="link-text">
                             <strong>Instagram</strong>
-                            <small>@artistusername</small>
+                            <small>Follow on Instagram</small>
                         </span>
 
-                        <span class="arrow">→</span>
+                        <span class="arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
                     </a>
 
-
                     <!-- Telegram -->
-                    <a class="link-card" href="https://t.me/shayannyo" target="_blank" rel="noopener noreferrer">
+                    <a class="link-card" href="#" target="_blank" rel="noopener noreferrer">
                         <span class="icon">
                             <i class="fa-brands fa-telegram"></i>
                         </span>
 
                         <span class="link-text">
                             <strong>Telegram</strong>
-                            <small>Official channel</small>
+                            <small>Join the official channel</small>
                         </span>
 
-                        <span class="arrow">→</span>
+                        <span class="arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
                     </a>
-
-
-                    <!-- YouTube -->
-
 
                 </div>
 
@@ -214,13 +235,14 @@
 
     </main>
 
-
+    <!-- Footer -->
     <footer>
-        © 2026 HESAR. All rights reserved. </footer>
+        © 2026 Hesar.pro. All rights reserved.
+    </footer>
 
-
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script src="js/main.js" defer></script>
+
     <script src="js/lightning.js" defer></script>
 
 </body>

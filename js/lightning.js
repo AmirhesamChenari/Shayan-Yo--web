@@ -7,10 +7,16 @@ let height = 0;
 let bolt = null;
 let flash = 0;
 
+const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+
 function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
 }
+
 
 function createBolt() {
     const points = [];
@@ -30,6 +36,7 @@ function createBolt() {
     return points;
 }
 
+
 function drawBolt(points, lineWidth, opacity) {
     if (!points.length) {
         return;
@@ -43,7 +50,8 @@ function drawBolt(points, lineWidth, opacity) {
         ctx.lineTo(points[i].x, points[i].y);
     }
 
-    ctx.strokeStyle = `rgba(190, 220, 255, ${opacity})`;
+    ctx.strokeStyle =
+        `rgba(190, 220, 255, ${opacity})`;
 
     ctx.lineWidth = lineWidth;
 
@@ -57,6 +65,7 @@ function drawBolt(points, lineWidth, opacity) {
 
     ctx.shadowBlur = 0;
 }
+
 
 function strike() {
     bolt = createBolt();
@@ -72,8 +81,14 @@ function strike() {
     }, 250);
 }
 
+
 function animate() {
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
 
     if (bolt) {
         drawBolt(bolt, 16, 0.08);
@@ -83,7 +98,9 @@ function animate() {
     }
 
     if (flash > 0) {
-        ctx.fillStyle = `rgba(200, 225, 255, ${flash})`;
+
+        ctx.fillStyle =
+            `rgba(200, 225, 255, ${flash})`;
 
         ctx.fillRect(
             0,
@@ -102,17 +119,31 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+
 function randomStrike() {
+
     strike();
 
-    const delay = 2000 + Math.random() * 4000;
+    const delay =
+        (reducedMotion ? 6000 : 2000) +
+        Math.random() *
+        (reducedMotion ? 6000 : 4000);
 
     setTimeout(randomStrike, delay);
 }
 
-window.addEventListener("resize", resize);
+
+window.addEventListener(
+    "resize",
+    resize
+);
+
 
 resize();
 animate();
 
-setTimeout(randomStrike, 1000);
+
+setTimeout(
+    randomStrike,
+    reducedMotion ? 3000 : 1000
+);
