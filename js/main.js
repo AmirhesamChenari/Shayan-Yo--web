@@ -1,0 +1,1 @@
+// Reserved for future interactive features. The initial page needs no JavaScript.
