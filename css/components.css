@@ -1,35 +1,35 @@
 .page {
     width: min(100%, var(--max));
-    margin: auto
+    margin: auto;
 }
 
 .profile {
     text-align: center;
-    padding: 32px 0
+    padding: 32px 0;
 }
 
 .avatar {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 220px;
+    height: 220px;
     margin: 0 auto 16px;
     border: 1px solid var(--border);
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, .28)
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .28);
 }
 
 h1 {
     margin: 0;
     font-size: clamp(1.8rem, 5vw, 2.4rem);
     line-height: 1.1;
-    letter-spacing: -.04em
+    letter-spacing: -.04em;
 }
 
 .username {
     margin: 8px 0 0;
     color: var(--muted);
-    font-size: .95rem
+    font-size: .95rem;
 }
 
 .bio {
@@ -37,13 +37,13 @@ h1 {
     margin: 16px auto 0;
     color: var(--muted);
     font-size: .95rem;
-    line-height: 1.6
+    line-height: 1.6;
 }
 
 .sections {
     display: flex;
     flex-direction: column;
-    gap: 32px
+    gap: 32px;
 }
 
 .section h2 {
@@ -51,13 +51,13 @@ h1 {
     color: var(--muted);
     font-size: .78rem;
     letter-spacing: .1em;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 .links {
     display: flex;
     flex-direction: column;
-    gap: 12px
+    gap: 12px;
 }
 
 .link-card {
@@ -69,18 +69,21 @@ h1 {
     border-radius: var(--radius);
     background: var(--surface);
     text-decoration: none;
-    transition: background-color .16s, border-color .16s, transform .16s
+    transition:
+        background-color .16s,
+        border-color .16s,
+        transform .16s;
 }
 
 .link-card:hover {
     background: var(--hover);
     border-color: rgba(255, 255, 255, .14);
-    transform: translateY(-2px)
+    transform: translateY(-2px);
 }
 
 .link-card:focus-visible {
     outline: 2px solid #fff;
-    outline-offset: 3px
+    outline-offset: 3px;
 }
 
 .icon {
@@ -91,7 +94,7 @@ h1 {
     place-items: center;
     border-radius: 12px;
     background: rgba(255, 255, 255, .06);
-    font-size: 1.15rem
+    font-size: 1.15rem;
 }
 
 .link-text {
@@ -100,14 +103,14 @@ h1 {
     flex: 1;
     flex-direction: column;
     gap: 3px;
-    margin: 0 12px
+    margin: 0 12px;
 }
 
 .link-text strong {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: .98rem
+    font-size: .98rem;
 }
 
 .link-text small {
@@ -115,12 +118,12 @@ h1 {
     color: var(--muted);
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: .82rem
+    font-size: .82rem;
 }
 
 .arrow {
     color: var(--muted);
-    font-size: 1.15rem
+    font-size: 1.15rem;
 }
 
 footer {
@@ -128,5 +131,112 @@ footer {
     margin: 48px auto 0;
     color: var(--muted);
     text-align: center;
-    font-size: .78rem
+    font-size: .78rem;
+}
+
+
+/* ================================
+   YouTube Menu
+================================ */
+
+.youtube-menu {
+    position: relative;
+    width: 100%;
+}
+
+.youtube-main {
+    cursor: pointer;
+}
+
+
+/* ================================
+   YouTube Submenu
+================================ */
+
+.youtube-submenu {
+    position: relative;
+
+    width: 70%;
+    margin: 8px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transform: translateY(-8px);
+
+    transition:
+        max-height .25s ease,
+        opacity .2s ease,
+        transform .2s ease,
+        visibility .2s ease;
+}
+
+
+/* ================================
+   Show Submenu
+================================ */
+
+.youtube-menu:hover .youtube-submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    max-height: 300px;
+
+    transform: translateY(0);
+}
+
+
+/* ================================
+   Submenu Items
+================================ */
+
+.youtube-submenu-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+/* ================================
+   Submenu Hover
+================================ */
+
+.youtube-submenu-item:hover {
+    background: rgba(255, 255, 255, 0.27);
+    border-color: rgba(255, 255, 255, .14);
+
+    /*
+       Do not use scale here.
+       It would make the item larger than
+       the available 70% width.
+    */
+    transform: translateY(-1px);
 }
