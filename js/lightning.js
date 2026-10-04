@@ -1,9 +1,4 @@
-const canvas = document.createElement("canvas");
-
-canvas.id = "lightning-background";
-
-document.body.prepend(canvas);
-
+const canvas = document.getElementById("lightning-background");
 const ctx = canvas.getContext("2d");
 
 let width = 0;
@@ -48,8 +43,7 @@ function drawBolt(points, lineWidth, opacity) {
         ctx.lineTo(points[i].x, points[i].y);
     }
 
-    ctx.strokeStyle =
-        `rgba(190, 220, 255, ${opacity})`;
+    ctx.strokeStyle = `rgba(190, 220, 255, ${opacity})`;
 
     ctx.lineWidth = lineWidth;
 
@@ -89,8 +83,7 @@ function animate() {
     }
 
     if (flash > 0) {
-        ctx.fillStyle =
-            `rgba(200, 225, 255, ${flash})`;
+        ctx.fillStyle = `rgba(200, 225, 255, ${flash})`;
 
         ctx.fillRect(
             0,
@@ -109,18 +102,17 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+function randomStrike() {
+    strike();
+
+    const delay = 2000 + Math.random() * 4000;
+
+    setTimeout(randomStrike, delay);
+}
+
 window.addEventListener("resize", resize);
 
 resize();
 animate();
-
-function randomStrike() {
-    strike();
-
-    const delay =
-        2000 + Math.random() * 4000;
-
-    setTimeout(randomStrike, delay);
-}
 
 setTimeout(randomStrike, 1000);
